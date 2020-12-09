@@ -163,8 +163,8 @@ def player_numbers(input)
   output = []
   game_hash.each do |team, team_stats|
     if team_stats[:team_name] == input 
-      team_stats.each do |key, value|
-        if key == :players
+      team_stats.each do |key, value| 
+        if key == :players 
           value.each do |player|
           output.push(player[:number])
           end
@@ -202,3 +202,7 @@ def big_shoe_rebounds
   end
   return rebounds
 end
+
+def most_points_scored()
+end
+  
