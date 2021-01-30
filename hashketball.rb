@@ -1,3 +1,4 @@
+# require 'pry'
 # Write your code below game_hash
 def game_hash
   {
@@ -128,9 +129,10 @@ end
 
 def num_points_scored(player_search)
   game_hash.each do |team, team_stats|
-    team_stats[:players].each do |player|
-      if player[:player_name] == player_search
-        return player[:points]
+   team_stats[:players].each do |player|
+     if player[:player_name] == player_search
+      return player[:points]
+      # binding.pry
       end
     end
   end
@@ -147,7 +149,7 @@ def shoe_size(name)
 end
 
 def team_colors(team_input)
-  if team_input.downcase == "charlotte hornets" 
+  if team_input.downcase = "Brooklyn Nets"
     return game_hash[:away][:colors]
   else return game_hash[:home][:colors]
   end
@@ -162,11 +164,11 @@ end
 def player_numbers(input)
   output = []
   game_hash.each do |team, team_stats|
-    if team_stats[:team_name] == input 
+    if team_stats[:team_name] == input
       team_stats.each do |key, value|
         if key == :players
           value.each do |player|
-          output.push(player[:number])
+            output.push(player[:number])
           end
         end
       end
@@ -200,5 +202,5 @@ def big_shoe_rebounds
       end
     end
   end
-  return rebounds
+return rebounds
 end
